@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | A.Box</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">A.Box</a>
+      <ul class="nav-links">
+        <li><a href="#ueber">Über mich</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#ausbildung">Ausbildung</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <span class="hero-label reveal">Fachinformatiker Anwendungsentwicklung</span>
+      <h1 class="hero-name reveal">Alexander<br /><em>Boxberger-Adam</em></h1>
+      <p class="hero-sub reveal">Junior Developer — Münster</p>
+      <div class="hero-line reveal"></div>
+      <a href="#ueber" class="hero-scroll reveal">
+        <span>Mehr erfahren</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-counter">
+      <span class="mono">2026</span>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">01 — Über mich</span>
+        <h2 class="section-title">Der Mensch<br /><em>hinter dem Code</em></h2>
+      </div>
+      <div class="ueber-grid">
+        <div class="ueber-text">
+          <p class="ueber-lead">
+            Ich komme nicht aus der klassischen Informatik-Schule. Zehn Jahre Kfz-Mechatronik haben mir beigebracht wie man unter Druck präzise arbeitet, Fehler systematisch eingrenzt und mit Menschen redet — nicht nur mit Maschinen.
+          </p>
+          <p>
+            Irgendwann hat das seinen Tribut gefordert, körperlich. Der Wechsel war notwendig, aber er hat mich zu etwas geführt das mich mehr fasziniert als alles davor.
+          </p>
+          <p>
+            Ich lese Nietzsche und Schopenhauer nicht um zu zitieren, sondern weil mich interessiert wie jemand denkt der alles in Frage stellt. Videospiele haben mein Interesse an Systemen geweckt — wie Regeln interagieren, wie Feedback funktioniert, warum manche Interfaces intuitiv sind und andere nicht.
+          </p>
+          <p>
+            Ich arbeite kosten- und zeitbewusst. Das klingt nach Phrase, kommt bei mir aber aus zehn Jahren wo beides täglich eine Rolle gespielt hat. Wenn ich nicht am Rechner sitze, bin ich draußen. Meistens im Zelt und der Angel im Wasser.
+          </p>
+        </div>
+        <div class="ueber-aside">
+          <div class="aside-card">
+            <span class="aside-num mono">10</span>
+            <span class="aside-label">Jahre Berufserfahrung<br />Kfz-Mechatronik</span>
+          </div>
+          <div class="aside-card">
+            <span class="aside-num mono">∞</span>
+            <span class="aside-label">Interesse an<br />Systemen & Strukturen</span>
+          </div>
+          <div class="aside-card">
+            <span class="aside-num mono">01</span>
+            <span class="aside-label">Bewusster Wechsel.<br />Kein Zufall.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">02 — Skills</span>
+        <h2 class="section-title">Womit ich<br /><em>arbeite</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w: 85%"></div>
+          </div>
+          <span class="skill-name mono">HTML / CSS</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w: 70%"></div>
+          </div>
+          <span class="skill-name mono">JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w: 60%"></div>
+          </div>
+          <span class="skill-name mono">React</span>
+        </div>
+        <div class="skill-item">
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w: 75%"></div>
+          </div>
+          <span class="skill-name mono">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJEKTE -->
+  <section id="projekte" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">03 — Projekte</span>
+        <h2 class="section-title">Was ich<br /><em>gebaut habe</em></h2>
+      </div>
+      <div class="projekte-grid">
+
+        <article class="projekt-card">
+          <div class="projekt-head">
+            <span class="projekt-num mono">001</span>
+            <div class="projekt-tags">
+              <span class="tag">HTML/JS</span>
+            </div>
+          </div>
+          <h3 class="projekt-title">Treewatch</h3>
+          <p class="projekt-desc">Interaktive Karte über Bäume für die Stadt Münster.</p>
+          <div class="projekt-links">
+            <a href="#" class="projekt-link">Demo →</a>
+          </div>
+        </article>
+
+        <article class="projekt-card projekt-card--placeholder">
+          <div class="projekt-head">
+            <span class="projekt-num mono">002</span>
+          </div>
+          <h3 class="projekt-title">Projekt folgt</h3>
+          <p class="projekt-desc">In Arbeit.</p>
+        </article>
+
+        <article class="projekt-card projekt-card--placeholder">
+          <div class="projekt-head">
+            <span class="projekt-num mono">003</span>
+          </div>
+          <h3 class="projekt-title">Projekt folgt</h3>
+          <p class="projekt-desc">In Arbeit.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSBILDUNG -->
+  <section id="ausbildung" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">04 — Ausbildung & Erfahrung</span>
+        <h2 class="section-title">Wo ich<br /><em>herkomme</em></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">2026 — 2028</span>
+            <h3 class="timeline-title">Fachinformatiker Anwendungsentwicklung</h3>
+            <p class="timeline-org">WBS Training · Münster</p>
+            <p class="timeline-desc">Schwerpunkt Webentwicklung. HTML, CSS, JavaScript, React, Git.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date mono">2016 — 2026</span>
+            <h3 class="timeline-title">Kfz-Mechatroniker</h3>
+            <p class="timeline-org">Automotive · Deutschland</p>
+            <p class="timeline-desc">Zehn Jahre Diagnose, Präzision und Verantwortung unter realen Bedingungen.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">05 — Kontakt</span>
+        <h2 class="section-title">Reden<br /><em>wir.</em></h2>
+      </div>
+      <div class="kontakt-grid">
+        <div class="kontakt-left">
+          <p class="kontakt-text">Ich bin derzeit in der Ausbildung und offen für Praktika, Nebenprojekte und Kontakte die nach dem Abschluss relevant werden könnten. Wer konkretes Interesse hat, meldet sich.</p>
+          <a href="mailto:kontakt@boxberger.app" class="kontakt-btn">
+            kontakt@boxberger.app
+          </a>
+        </div>
+        <div class="kontakt-right">
+          <a href="https://github.com/boxalexe" class="kontakt-link" target="_blank">
+            <span class="mono">GitHub</span>
+            <span>boxalexe →</span>
+          </a>
+          <a href="#" class="kontakt-link">
+            <span class="mono">LinkedIn</span>
+            <span>Profil →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="mono">© 2026 Alexander Boxberger-Adam</span>
+      <span class="mono footer-domain">boxberger.app</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
