@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | A.Box</title>
+  <title>Alexander Boxberger-Adam</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- DYNAMIC BACKGROUND -->
+  <div class="bg-wrap" id="bgWrap" aria-hidden="true">
+    <div class="bg-layer bg-layer--grid" id="bgGrid"></div>
+    <div class="bg-layer bg-layer--glow1" id="bgGlow1"></div>
+    <div class="bg-layer bg-layer--glow2" id="bgGlow2"></div>
+    <div class="bg-layer bg-layer--scan" id="bgScan"></div>
+  </div>
 
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">A.Box</a>
+      <a href="#hero" class="nav-logo">A.BOX</a>
       <ul class="nav-links">
-        <li><a href="#ueber">Über mich</a></li>
+        <li><a href="#ueber">Über</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projekte">Projekte</a></li>
         <li><a href="#ausbildung">Ausbildung</a></li>
@@ -27,60 +38,72 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
     <div class="hero-content">
-      <span class="hero-label reveal">Fachinformatiker Anwendungsentwicklung</span>
-      <h1 class="hero-name reveal">Alexander<br /><em>Boxberger-Adam</em></h1>
-      <p class="hero-sub reveal">Junior Developer — Münster</p>
-      <div class="hero-line reveal"></div>
-      <a href="#ueber" class="hero-scroll reveal">
+      <div class="hero-tag">
+        <span class="tag-bracket">[</span>
+        <span class="tag-text">Fachinformatiker Anwendungsentwicklung</span>
+        <span class="tag-bracket">]</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-first">Alexander</span>
+        <span class="name-last">Boxberger-Adam</span>
+      </h1>
+      <div class="hero-sub">
+        <span class="sub-item">Apprentice Developer</span>
+        <span class="sub-div">—</span>
+        <span class="sub-item sub-loc">Münster, DE</span>
+        <span class="sub-div">—</span>
+        <span class="sub-item sub-year">2026 - 2028</span>
+      </div>
+      <a href="#ueber" class="hero-btn">
         <span>Mehr erfahren</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
     </div>
-    <div class="hero-counter">
-      <span class="mono">2026</span>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-ring deco-ring--1"></div>
+      <div class="deco-ring deco-ring--2"></div>
+      <div class="deco-ring deco-ring--3"></div>
+      <div class="deco-cross deco-cross--1"></div>
+      <div class="deco-cross deco-cross--2"></div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">SCROLL</span>
     </div>
   </section>
 
   <!-- ÜBER MICH -->
   <section id="ueber" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag mono">01 — Über mich</span>
-        <h2 class="section-title">Der Mensch<br /><em>hinter dem Code</em></h2>
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">01</span>
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">Über mich</span>
       </div>
       <div class="ueber-grid">
-        <div class="ueber-text">
-          <p class="ueber-lead">
-            Ich komme nicht aus der klassischen Informatik-Schule. Zehn Jahre Kfz-Mechatronik haben mir beigebracht wie man unter Druck präzise arbeitet, Fehler systematisch eingrenzt und mit Menschen redet — nicht nur mit Maschinen.
-          </p>
-          <p>
-            Irgendwann hat das seinen Tribut gefordert, körperlich. Der Wechsel war notwendig, aber er hat mich zu etwas geführt das mich mehr fasziniert als alles davor.
-          </p>
-          <p>
-            Ich lese Nietzsche und Schopenhauer nicht um zu zitieren, sondern weil mich interessiert wie jemand denkt der alles in Frage stellt. Videospiele haben mein Interesse an Systemen geweckt — wie Regeln interagieren, wie Feedback funktioniert, warum manche Interfaces intuitiv sind und andere nicht.
-          </p>
-          <p>
-            Ich arbeite kosten- und zeitbewusst. Das klingt nach Phrase, kommt bei mir aber aus zehn Jahren wo beides täglich eine Rolle gespielt hat. Wenn ich nicht am Rechner sitze, bin ich draußen. Meistens im Zelt und der Angel im Wasser.
-          </p>
+        <div class="ueber-left">
+          <h2 class="section-title">Der Mensch<br /><em>hinter dem Code</em></h2>
+          <div class="ueber-stats">
+            <div class="stat">
+              <span class="stat-n">10</span>
+              <span class="stat-l">Jahre Kfz-Mechatronik</span>
+            </div>
+            <div class="stat">
+              <span class="stat-n">∞</span>
+              <span class="stat-l">Interesse an Systemen</span>
+            </div>
+            <div class="stat">
+              <span class="stat-n">01</span>
+              <span class="stat-l">Bewusster Wechsel</span>
+            </div>
+          </div>
         </div>
-        <div class="ueber-aside">
-          <div class="aside-card">
-            <span class="aside-num mono">10</span>
-            <span class="aside-label">Jahre Berufserfahrung<br />Kfz-Mechatronik</span>
-          </div>
-          <div class="aside-card">
-            <span class="aside-num mono">∞</span>
-            <span class="aside-label">Interesse an<br />Systemen & Strukturen</span>
-          </div>
-          <div class="aside-card">
-            <span class="aside-num mono">01</span>
-            <span class="aside-label">Bewusster Wechsel.<br />Kein Zufall.</span>
-          </div>
+        <div class="ueber-right">
+          <p class="ueber-lead">Ich komme nicht aus der klassischen Informatik-Schule. Zehn Jahre Kfz-Mechatronik haben mir beigebracht wie man unter Druck präzise arbeitet, Fehler systematisch eingrenzt und mit Menschen redet — nicht nur mit Maschinen.</p>
+          <p>Irgendwann hat das seinen Tribut gefordert. Der Wechsel war notwendig, aber er hat mich zu etwas geführt das mich mehr fasziniert als alles davor.</p>
+          <p>Ich lese Nietzsche und Schopenhauer nicht um zu zitieren, sondern weil mich interessiert wie jemand denkt der alles in Frage stellt. Videospiele haben mein Interesse an Systemen geweckt — wie Regeln interagieren, wie Feedback funktioniert, warum manche Interfaces intuitiv sind und andere nicht.</p>
+          <p>Ich arbeite kosten- und zeitbewusst. Das klingt nach Phrase, kommt bei mir aber aus zehn Jahren wo beides täglich eine Rolle gespielt hat. Wenn ich nicht am Rechner sitze, bin ich draußen. Meistens im Zelt, Angel im Wasser.</p>
         </div>
       </div>
     </div>
@@ -89,34 +112,48 @@
   <!-- SKILLS -->
   <section id="skills" class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag mono">02 — Skills</span>
-        <h2 class="section-title">Womit ich<br /><em>arbeite</em></h2>
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">02</span>
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">Skills</span>
       </div>
+      <h2 class="section-title">Womit ich <em>arbeite</em></h2>
       <div class="skills-grid">
-        <div class="skill-item">
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w: 85%"></div>
+        <div class="skill-card" data-level="confident">
+          <div class="skill-top">
+            <span class="skill-name">HTML / CSS</span>
+            <span class="skill-badge">Confident</span>
           </div>
-          <span class="skill-name mono">HTML / CSS</span>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:85%"></div>
+          </div>
         </div>
-        <div class="skill-item">
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w: 70%"></div>
+        <div class="skill-card" data-level="developing">
+          <div class="skill-top">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-badge">Developing</span>
           </div>
-          <span class="skill-name mono">JavaScript</span>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:40%"></div>
+          </div>
         </div>
-        <div class="skill-item">
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w: 60%"></div>
+        <div class="skill-card" data-level="learning">
+          <div class="skill-top">
+            <span class="skill-name">React</span>
+            <span class="skill-badge">Learning</span>
           </div>
-          <span class="skill-name mono">React</span>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:30%"></div>
+          </div>
         </div>
-        <div class="skill-item">
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w: 75%"></div>
+        <div class="skill-card" data-level="developing">
+          <div class="skill-top">
+            <span class="skill-name">Git / GitHub</span>
+            <span class="skill-badge">Developing</span>
           </div>
-          <span class="skill-name mono">Git / GitHub</span>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:70%"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,40 +162,47 @@
   <!-- PROJEKTE -->
   <section id="projekte" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag mono">03 — Projekte</span>
-        <h2 class="section-title">Was ich<br /><em>gebaut habe</em></h2>
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">03</span>
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">Projekte</span>
       </div>
-      <div class="projekte-grid">
+      <h2 class="section-title">Was ich <em>gebaut habe</em></h2>
+      <div class="projekte-list">
 
-        <article class="projekt-card">
-          <div class="projekt-head">
-            <span class="projekt-num mono">001</span>
+        <article class="projekt">
+          <div class="projekt-num">001</div>
+          <div class="projekt-info">
             <div class="projekt-tags">
-              <span class="tag">HTML/JS</span>
+              <span class="ptag">HTML</span>
+              <span class="ptag">JS</span>
             </div>
+            <h3 class="projekt-title">Treewatch</h3>
+            <p class="projekt-desc">Interaktive Karte über Bäume für die Stadt Münster. Öffentliche Datensätze visuell aufbereitet.</p>
           </div>
-          <h3 class="projekt-title">Treewatch</h3>
-          <p class="projekt-desc">Interaktive Karte über Bäume für die Stadt Münster.</p>
-          <div class="projekt-links">
-            <a href="https://treewatch.boxberger.app" class="projekt-link">Demo →</a>
+          <div class="projekt-action">
+            <a href="https://treewatch.boxberger.app" class="projekt-link" target="_blank" rel="noopener">
+              Demo aufrufen <span>→</span>
+            </a>
           </div>
         </article>
 
-        <article class="projekt-card projekt-card--placeholder">
-          <div class="projekt-head">
-            <span class="projekt-num mono">002</span>
+        <article class="projekt projekt--wip">
+          <div class="projekt-num">002</div>
+          <div class="projekt-info">
+            <div class="projekt-tags"><span class="ptag ptag--wip">In Arbeit</span></div>
+            <h3 class="projekt-title">Projekt folgt</h3>
+            <p class="projekt-desc">Wird gerade gebaut.</p>
           </div>
-          <h3 class="projekt-title">Projekt folgt</h3>
-          <p class="projekt-desc">In Arbeit.</p>
         </article>
 
-        <article class="projekt-card projekt-card--placeholder">
-          <div class="projekt-head">
-            <span class="projekt-num mono">003</span>
+        <article class="projekt projekt--wip">
+          <div class="projekt-num">003</div>
+          <div class="projekt-info">
+            <div class="projekt-tags"><span class="ptag ptag--wip">In Arbeit</span></div>
+            <h3 class="projekt-title">Projekt folgt</h3>
+            <p class="projekt-desc">Wird gerade gebaut.</p>
           </div>
-          <h3 class="projekt-title">Projekt folgt</h3>
-          <p class="projekt-desc">In Arbeit.</p>
         </article>
 
       </div>
@@ -168,32 +212,39 @@
   <!-- AUSBILDUNG -->
   <section id="ausbildung" class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag mono">04 — Ausbildung & Erfahrung</span>
-        <h2 class="section-title">Wo ich<br /><em>herkomme</em></h2>
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">04</span>
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">Ausbildung & Erfahrung</span>
       </div>
+      <h2 class="section-title">Wo ich <em>herkomme</em></h2>
       <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date mono">2026 — 2028</span>
-            <h3 class="timeline-title">Fachinformatiker Anwendungsentwicklung</h3>
-            <p class="timeline-org">WBS Training · Münster</p>
-            <p class="timeline-desc">Schwerpunkt Webentwicklung. HTML, CSS, JavaScript, React, Git.</p>
+        <div class="tl-item">
+          <div class="tl-period">
+            <span class="tl-year">2026</span>
+            <span class="tl-dash">—</span>
+            <span class="tl-year tl-year--end">2028</span>
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">Fachinformatiker Anwendungsentwicklung</h3>
+            <p class="tl-org">WBS Training · Münster</p>
+            <p class="tl-desc">Persönliches Interesse an Webentwicklung. HTML, CSS, JavaScript, React, Git. Zusätzliches Interesse an IT-Security und Angriffs-/Verteidigungsszenarien.</p>
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date mono">2016 — 2026</span>
-            <h3 class="timeline-title">Kfz-Mechatroniker</h3>
-            <p class="timeline-org">Automotive · Deutschland</p>
-            <p class="timeline-desc">Zehn Jahre Diagnose, Präzision und Verantwortung unter realen Bedingungen.</p>
+        <div class="tl-item">
+          <div class="tl-period">
+            <span class="tl-year">2016</span>
+            <span class="tl-dash">—</span>
+            <span class="tl-year tl-year--end">2026</span>
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">Kfz-Mechatroniker</h3>
+            <p class="tl-org">Automotive · Deutschland</p>
+            <p class="tl-desc">Zehn Jahre Diagnose, Präzision und Verantwortung unter realen Bedingungen. Systematische Fehleranalyse. Termintreue. Kommunikation.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -201,26 +252,60 @@
   <!-- KONTAKT -->
   <section id="kontakt" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag mono">05 — Kontakt</span>
-        <h2 class="section-title">Reden<br /><em>wir.</em></h2>
+      <div class="section-eyebrow">
+        <span class="eyebrow-num">05</span>
+        <span class="eyebrow-slash">/</span>
+        <span class="eyebrow-text">Kontakt</span>
       </div>
       <div class="kontakt-grid">
         <div class="kontakt-left">
+          <h2 class="section-title">Reden <em>wir.</em></h2>
           <p class="kontakt-text">Ich bin derzeit in der Ausbildung und offen für Praktika, Nebenprojekte und Kontakte die nach dem Abschluss relevant werden könnten. Wer konkretes Interesse hat, meldet sich.</p>
-          <a href="mailto:kontakt@boxberger.app" class="kontakt-btn">
-            kontakt@boxberger.app
-          </a>
+          <div class="kontakt-socials">
+            <a href="https://github.com/boxalexe" class="social-link" target="_blank" rel="noopener">
+              <span class="social-key">GitHub</span>
+              <span class="social-val">boxalexe →</span>
+            </a>
+            <a href="#" class="social-link">
+              <span class="social-key">LinkedIn</span>
+              <span class="social-val">Profil →</span>
+            </a>
+          </div>
         </div>
         <div class="kontakt-right">
-          <a href="https://github.com/boxalexe" class="kontakt-link" target="_blank">
-            <span class="mono">GitHub</span>
-            <span>boxalexe →</span>
-          </a>
-          <a href="#" class="kontakt-link">
-            <span class="mono">LinkedIn</span>
-            <span>Profil →</span>
-          </a>
+          <form id="kontaktForm" class="kontakt-form" novalidate data-endpoint="https://formspree.io/f/xwvzjppj">
+            <!-- *H0NEYP0T* -->
+            <div style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
+              <input type="text" name="website" id="hp_web" tabindex="-1" autocomplete="off" />
+              <input type="text" name="phone_number" id="hp_tel" tabindex="-1" autocomplete="off" />
+            </div>
+            <input type="hidden" name="_ts" id="form_ts" />
+
+            <div class="frow">
+              <label class="flabel" for="f_name">Name <span class="freq">*</span></label>
+              <input class="finput" type="text" id="f_name" name="name" required placeholder="Max Mustermann" autocomplete="name" />
+            </div>
+            <div class="frow">
+              <label class="flabel" for="f_email">E-Mail <span class="freq">*</span></label>
+              <input class="finput" type="email" id="f_email" name="email" required placeholder="deine@mail.de" autocomplete="email" />
+            </div>
+            <div class="frow">
+              <label class="flabel" for="f_subject">Betreff</label>
+              <input class="finput" type="text" id="f_subject" name="subject" placeholder="Praktikum / Projekt / Sonstiges" />
+            </div>
+            <div class="frow">
+              <label class="flabel" for="f_msg">Nachricht <span class="freq">*</span></label>
+              <textarea class="finput ftextarea" id="f_msg" name="message" required placeholder="Was hast du vor?" rows="5"></textarea>
+            </div>
+            <div class="ffoot">
+              <span class="fnote">* Pflichtfeld</span>
+              <button type="submit" class="fbtn" id="fbtn">
+                <span class="fbtn-text">Senden</span>
+                <span class="fbtn-arr">→</span>
+              </button>
+            </div>
+            <div class="fmsg" id="fmsg" role="alert" aria-live="polite"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -229,8 +314,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <span class="mono">© 2026 Alexander Boxberger-Adam</span>
-      <span class="mono footer-domain">boxberger.app</span>
+      <span>© 2026 Alexander Boxberger-Adam</span>
+      <span>boxberger.app</span>
     </div>
   </footer>
 
