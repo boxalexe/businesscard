@@ -10,6 +10,7 @@
   --border-b: #243050;
   --text:     #c8d4e8;
   --muted:    #4a5872;
+  --muted-lt: #657187;
   --faint:    #2a3448;
   --cyan:     #00e5ff;
   --green:    #39ff6e;
@@ -148,9 +149,9 @@ body.c-hover .cursor-dot {
 
 .nav-links a {
   font-family: var(--f2);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
-  color: var(--muted);
+  color: var(--muted-lt);
   padding: 0.3rem 0.9rem;
   transition: color 0.2s;
   text-transform: uppercase;
@@ -184,12 +185,12 @@ body.c-hover .cursor-dot {
   gap: 0.5rem;
   margin-bottom: 2rem;
   font-family: var(--f2);
-  font-size: 0.62rem;
+  font-size: 0.70rem;
   letter-spacing: 0.1em;
 }
 
 .tag-bracket { color: var(--cyan); }
-.tag-text    { color: var(--muted); }
+.tag-text    { color: var(--muted-lt); }
 
 .hero-name {
   display: flex;
@@ -223,11 +224,11 @@ body.c-hover .cursor-dot {
   gap: 0.8rem;
   margin-bottom: 2.5rem;
   font-family: var(--f2);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
 
-.sub-item    { color: var(--muted); }
+.sub-item    { color: var(--muted-lt); }
 .sub-div     { color: var(--faint); }
 .sub-loc, .sub-year { color: var(--text); }
 
@@ -349,13 +350,13 @@ body.c-hover .cursor-dot {
   gap: 0.6rem;
   margin-bottom: 2.5rem;
   font-family: var(--f2);
-  font-size: 0.62rem;
+  font-size: 0.70rem;
   letter-spacing: 0.12em;
 }
 
 .eyebrow-num  { color: var(--cyan); }
-.eyebrow-slash{ color: var(--muted); }
-.eyebrow-text { color: var(--muted); text-transform: uppercase; }
+.eyebrow-slash{ color: var(--muted-lt); }
+.eyebrow-text { color: var(--muted-lt); text-transform: uppercase; }
 
 .section-title {
   font-family: var(--f1);
@@ -410,8 +411,8 @@ body.c-hover .cursor-dot {
 
 .stat-l {
   font-family: var(--f2);
-  font-size: 0.65rem;
-  color: var(--muted);
+  font-size: 0.72rem;
+  color: var(--muted-lt);
   letter-spacing: 0.06em;
   line-height: 1.5;
 }
@@ -586,7 +587,7 @@ body.c-hover .cursor-dot {
 
 .projekt-link {
   font-family: var(--f2);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   color: var(--cyan);
   white-space: nowrap;
@@ -671,7 +672,7 @@ body.c-hover .cursor-dot {
 
 .tl-org {
   font-family: var(--f2);
-  font-size: 0.62rem;
+  font-size: 0.70rem;
   letter-spacing: 0.08em;
   color: var(--green);
   margin-bottom: 0.6rem;
@@ -730,8 +731,8 @@ body.c-hover .cursor-dot {
 
 .social-val {
   font-family: var(--f2);
-  font-size: 0.65rem;
-  color: var(--muted);
+  font-size: 0.72rem;
+  color: var(--muted-lt);
   transition: color 0.2s;
 }
 
@@ -824,7 +825,7 @@ body.c-hover .cursor-dot {
 .fmsg {
   margin-top: 1rem;
   font-family: var(--f2);
-  font-size: 0.62rem;
+  font-size: 0.70rem;
   letter-spacing: 0.06em;
   min-height: 1.2rem;
 }
@@ -890,7 +891,14 @@ footer {
   .kontakt-grid { grid-template-columns: 1fr; gap: 3rem; }
 
   .projekt { grid-template-columns: 50px 1fr; }
-  .projekt-action { display: none; }
+  .projekt-action {
+    grid-column: 2;
+    padding: 0 1.8rem 1.5rem;
+  }
+  .projekt-link {
+    display: inline-block;
+    padding: 0.5rem 0;
+  }
 }
 
 @media (max-width: 600px) {
