@@ -7,19 +7,16 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- CURSOR -->
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <!-- DYNAMIC BACKGROUND -->
-  <div class="bg-wrap" id="bgWrap" aria-hidden="true">
-    <div class="bg-layer bg-layer--grid" id="bgGrid"></div>
-    <div class="bg-layer bg-layer--glow1" id="bgGlow1"></div>
-    <div class="bg-layer bg-layer--glow2" id="bgGlow2"></div>
-    <div class="bg-layer bg-layer--scan" id="bgScan"></div>
+  <!-- HINTERGRUND: leichter Cyan/Grün-Nebel, weicht der Maus aus -->
+  <div class="bg-wrap" aria-hidden="true">
+    <canvas id="fogCanvas"></canvas>
   </div>
 
   <!-- NAV -->
@@ -27,10 +24,9 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">A.BOX</a>
       <ul class="nav-links">
-        <li><a href="#ueber">Über</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projekte">Projekte</a></li>
-        <li><a href="#ausbildung">Ausbildung</a></li>
+        <li><a href="#pillars" data-open-pillar="ueber">Über mich</a></li>
+        <li><a href="#pillars" data-open-pillar="projekte">Projekte</a></li>
+        <li><a href="#pillars" data-open-pillar="skills">Skills</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
@@ -46,222 +42,144 @@
       </div>
       <h1 class="hero-name">
         <span class="name-first">Alexander</span>
-        <span class="name-last">Boxberger-Adam</span>
+        <span class="name-last">Boxberger&#8209;Adam</span>
       </h1>
       <div class="hero-sub">
         <span class="sub-item">Apprentice Developer</span>
-        <span class="sub-div">—</span>
+        <span class="sub-div">/</span>
         <span class="sub-item sub-loc">Münster, DE</span>
-        <span class="sub-div">—</span>
+        <span class="sub-div">/</span>
         <span class="sub-item sub-year">2026 - 2028</span>
       </div>
-      <a href="#ueber" class="hero-btn">
+      <a href="#pillars" class="hero-btn">
         <span>Mehr erfahren</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
     </div>
-    <div class="hero-deco" aria-hidden="true">
-      <div class="deco-ring deco-ring--1"></div>
-      <div class="deco-ring deco-ring--2"></div>
-      <div class="deco-ring deco-ring--3"></div>
-      <div class="deco-cross deco-cross--1"></div>
-      <div class="deco-cross deco-cross--2"></div>
-    </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span class="scroll-line"></span>
-      <span class="scroll-label">SCROLL</span>
-    </div>
   </section>
 
-  <!-- ÜBER MICH -->
-  <section id="ueber" class="section">
+  <!-- DREI SÄULEN -->
+  <section id="pillars" class="section">
     <div class="container">
-      <div class="section-eyebrow">
-        <span class="eyebrow-num">01</span>
-        <span class="eyebrow-slash">/</span>
-        <span class="eyebrow-text">Über mich</span>
-      </div>
-      <div class="ueber-grid">
-        <div class="ueber-left">
-          <h2 class="section-title">Der Mensch<br /><em>hinter dem Code</em></h2>
-          <div class="ueber-stats">
-            <div class="stat">
-              <span class="stat-n">10</span>
-              <span class="stat-l">Jahre Kfz-Mechatronik</span>
-            </div>
-            <div class="stat">
-              <span class="stat-n">∞</span>
-              <span class="stat-l">Interesse an Systemen</span>
-            </div>
-            <div class="stat">
-              <span class="stat-n">01</span>
-              <span class="stat-l">Bewusster Wechsel</span>
-            </div>
-          </div>
-        </div>
-        <div class="ueber-right">
-          <p class="ueber-lead">Ich komme nicht aus der klassischen Informatik-Schule. Zehn Jahre Kfz-Mechatronik haben mir beigebracht wie man unter Druck präzise arbeitet, Fehler systematisch eingrenzt und mit Menschen redet — nicht nur mit Maschinen.</p>
-          <p>Irgendwann hat das seinen Tribut gefordert. Der Wechsel war notwendig, aber er hat mich zu etwas geführt das mich mehr fasziniert als alles davor.</p>
-          <p>Ich lese Nietzsche und Schopenhauer nicht um zu zitieren, sondern weil mich interessiert wie jemand denkt der alles in Frage stellt. Videospiele haben mein Interesse an Systemen geweckt — wie Regeln interagieren, wie Feedback funktioniert, warum manche Interfaces intuitiv sind und andere nicht.</p>
-          <p>Ich arbeite kosten- und zeitbewusst. Das klingt nach Phrase, kommt bei mir aber aus zehn Jahren wo beides täglich eine Rolle gespielt hat. Wenn ich nicht am Rechner sitze, bin ich draußen. Meistens im Zelt, Angel im Wasser.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="pillars-row has-open reveal" id="pillarsRow">
 
-  <!-- SKILLS -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow">
-        <span class="eyebrow-num">02</span>
-        <span class="eyebrow-slash">/</span>
-        <span class="eyebrow-text">Skills</span>
-      </div>
-      <h2 class="section-title">Womit ich <em>arbeite</em></h2>
-      <div class="skills-grid">
-        <div class="skill-card" data-level="confident">
-          <div class="skill-top">
-            <span class="skill-name">HTML / CSS</span>
-            <span class="skill-badge">Confident</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:85%"></div>
-          </div>
-        </div>
-        <div class="skill-card" data-level="developing">
-          <div class="skill-top">
-            <span class="skill-name">JavaScript</span>
-            <span class="skill-badge">Developing</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:40%"></div>
-          </div>
-        </div>
-        <div class="skill-card" data-level="learning">
-          <div class="skill-top">
-            <span class="skill-name">React</span>
-            <span class="skill-badge">Learning</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:30%"></div>
-          </div>
-        </div>
-        <div class="skill-card" data-level="developing">
-          <div class="skill-top">
-            <span class="skill-name">Git / GitHub</span>
-            <span class="skill-badge">Developing</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:70%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJEKTE -->
-  <section id="projekte" class="section">
-    <div class="container">
-      <div class="section-eyebrow">
-        <span class="eyebrow-num">03</span>
-        <span class="eyebrow-slash">/</span>
-        <span class="eyebrow-text">Projekte</span>
-      </div>
-      <h2 class="section-title">Was ich <em>gebaut habe</em></h2>
-      <div class="projekte-list">
-
-        <article class="projekt">
-          <div class="projekt-num">001</div>
-          <div class="projekt-info">
-            <div class="projekt-tags">
-              <span class="ptag">HTML</span>
-              <span class="ptag">JS</span>
+        <!-- SÄULE 1: ÜBER MICH -->
+        <article class="pillar is-open" data-pillar="ueber">
+          <button class="pillar-head" aria-expanded="true">
+            <span class="pillar-index">01</span>
+            <span class="pillar-label">Über mich</span>
+            <span class="pillar-plus">+</span>
+          </button>
+          <div class="pillar-body">
+            <div class="pillar-body-inner">
+              <div class="pillar-eyebrow">Werdegang</div>
+              <h2 class="pillar-title">Mein Weg</h2>
+              <div class="pillar-text">
+                <p>Ich komme nicht aus der klassischen Informatik-Schule. Zehn Jahre habe ich als <strong>Kfz-Mechatroniker</strong> gearbeitet. Dabei habe ich gelernt, Fehler systematisch einzugrenzen, unter Zeitdruck präzise zu bleiben und mit Menschen zu reden statt nur mit Maschinen.</p>
+                <p>Irgendwann hat der Job seinen Tribut gefordert und der Wechsel wurde notwendig. Er hat mich zu etwas geführt, das mich seitdem mehr fasziniert als alles davor: wie Software aufgebaut ist, wie Systeme miteinander sprechen und warum manche Lösungen einfach funktionieren, während andere es nicht tun.</p>
+                <p>Seit 2026 mache ich die Umschulung zum <strong>Fachinformatiker für Anwendungsentwicklung</strong> bei WBS Training in Münster. Aus der Werkstatt geblieben ist mir ein kosten- und zeitbewusstes Arbeiten, dazu die Gewohnheit, Aufgaben zu planen und logischen Abläufen zu folgen, wie man es bei der Fehlerdiagnose im Kfz-Bereich lernt. Das hat zehn Jahre lang täglich eine Rolle gespielt, und das legt man nicht einfach ab.</p>
+              </div>
+              <div class="ueber-stats">
+                <div class="stat">
+                  <span class="stat-n">10</span>
+                  <span class="stat-l">Jahre Kfz&#8209;Mechatronik</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-n">∞</span>
+                  <span class="stat-l">Interesse an Systemen</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-n">01</span>
+                  <span class="stat-l">Bewusster Wechsel</span>
+                </div>
+              </div>
             </div>
-            <h3 class="projekt-title">Treewatch</h3>
-            <p class="projekt-desc">Interaktive Karte über Bäume für die Stadt Münster. Öffentliche Datensätze visuell aufbereitet.</p>
-          </div>
-          <div class="projekt-action">
-            <a href="https://treewatch.boxberger.app" class="projekt-link" target="_blank" rel="noopener">
-              Demo aufrufen <span>→</span>
-            </a>
           </div>
         </article>
 
-        <article class="projekt">
-          <div class="projekt-num">002</div>
-          <div class="projekt-info">
-            <div class="projekt-tags">
-              <span class="ptag">HTML</span>
-              <span class="ptag">JS</span>
+        <!-- SÄULE 2: PROJEKTE -->
+        <article class="pillar" data-pillar="projekte">
+          <button class="pillar-head" aria-expanded="false">
+            <span class="pillar-index">02</span>
+            <span class="pillar-label">Projekte</span>
+            <span class="pillar-plus">+</span>
+          </button>
+          <div class="pillar-body">
+            <div class="pillar-body-inner">
+              <div class="pillar-eyebrow">Praxis</div>
+              <h2 class="pillar-title">Was ich gebaut habe</h2>
+              <div class="pillar-text">
+                <p>Meine Projekterfahrung ist noch jung, aber sie ist echt. Von Oktober 2025 bis Februar 2026 habe ich freiwillig am <strong>Digital Shaper Programme von TechLabs</strong> in Münster teilgenommen, im Web-Developer-Track. Dort habe ich zum ersten Mal erlebt, wie es ist, mit einem zufällig zusammengestellten Team eine Idee zu finden, zu planen, umzusetzen und am Ende vorzustellen. Daraus ist <strong>Treewatch</strong> entstanden.</p>
+                <p>Zuhause beschäftige ich mich aus eigenem Interesse mit den unterschiedlichsten Themen und verliere dabei regelmäßig die Zeit aus den Augen. Ursprünglich war <strong>Layer 8 Academy</strong> nur für mich selbst und ein paar Mitschüler gedacht, mit gerade einmal fünf Themenbereichen. Die positive Resonanz hat mich motiviert, noch intensiver weiterzumachen. Bis heute lerne ich selbst dazu, während ich daran baue und es nutze.</p>
+              </div>
+
+              <div class="projekt-list">
+                <article class="projekt">
+                  <div class="projekt-num">001</div>
+                  <div class="projekt-info">
+                    <div class="projekt-tags">
+                      <span class="ptag">HTML</span>
+                      <span class="ptag">JS</span>
+                    </div>
+                    <h3 class="projekt-title">Treewatch</h3>
+                    <p class="projekt-desc">Interaktive Karte über Bäume für die Stadt Münster. Öffentliche Datensätze visuell aufbereitet.</p>
+                  </div>
+                  <div class="projekt-action">
+                    <a href="https://treewatch.boxberger.app" class="projekt-link" target="_blank" rel="noopener">
+                      Demo aufrufen <span>→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article class="projekt">
+                  <div class="projekt-num">002</div>
+                  <div class="projekt-info">
+                    <div class="projekt-tags">
+                      <span class="ptag">HTML</span>
+                      <span class="ptag">JS</span>
+                    </div>
+                    <h3 class="projekt-title">Layer 8 Academy</h3>
+                    <p class="projekt-desc">Prüfungstrainer für die IHK-Abschlussprüfung Fachinformatik mit über 750 Multiple-Choice-Fragen, Nachschlagewerk und Bibliothek zu Netzwerktechnik, Sicherheit und Systemintegration.</p>
+                  </div>
+                  <div class="projekt-action">
+                    <a href="https://layer8academy.boxberger.app" class="projekt-link" target="_blank" rel="noopener">
+                      Demo aufrufen <span>→</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
             </div>
-            <h3 class="projekt-title">Layer 8 Academy</h3>
-            <p class="projekt-desc">Prüfungstrainer für die IHK-Abschlussprüfung Fachinformatik — über 750 Multiple-Choice-Fragen, Nachschlagewerk und Bibliothek zu Netzwerktechnik, Sicherheit und Systemintegration. Ursprünglich für die eigene Prüfungsvorbereitung gebaut.</p>
-          </div>
-          <div class="projekt-action">
-            <a href="https://layer8academy.boxberger.app" class="projekt-link" target="_blank" rel="noopener">
-              Demo aufrufen <span>→</span>
-            </a>
           </div>
         </article>
 
-        <article class="projekt projekt--wip">
-          <div class="projekt-num">003</div>
-          <div class="projekt-info">
-            <div class="projekt-tags"><span class="ptag ptag--wip">In Arbeit</span></div>
-            <h3 class="projekt-title">Projekt folgt</h3>
-            <p class="projekt-desc">Wird gerade gebaut.</p>
+        <!-- SÄULE 3: SKILLS -->
+        <article class="pillar" data-pillar="skills">
+          <button class="pillar-head" aria-expanded="false">
+            <span class="pillar-index">03</span>
+            <span class="pillar-label">Skills</span>
+            <span class="pillar-plus">+</span>
+          </button>
+          <div class="pillar-body">
+            <div class="pillar-body-inner">
+              <div class="pillar-eyebrow">Werkzeuge</div>
+              <h2 class="pillar-title">Womit ich schon gearbeitet habe</h2>
+              <div class="pillar-text">
+                <p>Das hier sind die Werkzeuge, mit denen ich bisher wirklich gearbeitet habe.</p>
+              </div>
+              <div class="skills-chips">
+                <span class="skill-chip">HTML</span>
+                <span class="skill-chip">CSS</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">Git</span>
+                <span class="skill-chip">GitHub</span>
+                <span class="skill-chip">Visual Studio Code</span>
+                <span class="skill-chip">Kali Linux</span>
+              </div>
+              <p class="skill-chip-note">Dazu Erfahrung mit KI-Modellen seit den frühen GPT-Versionen, als Werkzeug im Alltag und nicht als Persönlichkeitsmerkmal.</p>
+            </div>
           </div>
         </article>
 
-        <article class="projekt projekt--wip">
-          <div class="projekt-num">004</div>
-          <div class="projekt-info">
-            <div class="projekt-tags"><span class="ptag ptag--wip">In Arbeit</span></div>
-            <h3 class="projekt-title">Projekt folgt</h3>
-            <p class="projekt-desc">Wird gerade gebaut.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- AUSBILDUNG -->
-  <section id="ausbildung" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow">
-        <span class="eyebrow-num">04</span>
-        <span class="eyebrow-slash">/</span>
-        <span class="eyebrow-text">Ausbildung & Erfahrung</span>
-      </div>
-      <h2 class="section-title">Wo ich <em>herkomme</em></h2>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-period">
-            <span class="tl-year">2026</span>
-            <span class="tl-dash">—</span>
-            <span class="tl-year tl-year--end">2028</span>
-          </div>
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <h3 class="tl-title">Fachinformatiker Anwendungsentwicklung</h3>
-            <p class="tl-org">WBS Training · Münster</p>
-            <p class="tl-desc">Persönliches Interesse an Webentwicklung. HTML, CSS, JavaScript, React, Git. Zusätzliches Interesse an IT-Security und Angriffs-/Verteidigungsszenarien.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-period">
-            <span class="tl-year">2016</span>
-            <span class="tl-dash">—</span>
-            <span class="tl-year tl-year--end">2026</span>
-          </div>
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <h3 class="tl-title">Kfz-Mechatroniker</h3>
-            <p class="tl-org">Automotive · Deutschland</p>
-            <p class="tl-desc">Zehn Jahre Diagnose, Präzision und Verantwortung unter realen Bedingungen. Systematische Fehleranalyse. Termintreue. Kommunikation.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -269,15 +187,10 @@
   <!-- KONTAKT -->
   <section id="kontakt" class="section">
     <div class="container">
-      <div class="section-eyebrow">
-        <span class="eyebrow-num">05</span>
-        <span class="eyebrow-slash">/</span>
-        <span class="eyebrow-text">Kontakt</span>
-      </div>
       <div class="kontakt-grid">
-        <div class="kontakt-left">
-          <h2 class="section-title">Reden <em>wir.</em></h2>
-          <p class="kontakt-text">Ich bin derzeit in der Ausbildung und offen für Praktika, Nebenprojekte und Kontakte die nach dem Abschluss relevant werden könnten. Wer konkretes Interesse hat, meldet sich.</p>
+        <div class="kontakt-left reveal">
+          <h2 class="section-title">Kontakt<em>.</em></h2>
+          <p class="kontakt-text">Ich bin offen für Praktika, Projekte und neue Kontakte. Schreib mir einfach, ich melde mich zeitnah zurück.</p>
           <div class="kontakt-socials">
             <a href="https://github.com/boxalexe" class="social-link" target="_blank" rel="noopener">
               <span class="social-key">GitHub</span>
@@ -289,7 +202,7 @@
             </a>
           </div>
         </div>
-        <div class="kontakt-right">
+        <div class="kontakt-right reveal">
           <form id="kontaktForm" class="kontakt-form" novalidate data-endpoint="https://formspree.io/f/xwvzjppj">
             <!-- *H0NEYP0T* -->
             <div style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
