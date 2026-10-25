@@ -455,9 +455,9 @@ body.c-hover .cursor-dot {
   border-right: 1px solid var(--border);
 }
 
-.projekt-info { padding: 1.3rem 1.5rem; }
+.projekt-info { padding: 1.3rem 1.5rem; min-width: 0; }
 
-.projekt-tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; }
+.projekt-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
 
 .ptag {
   font-family: var(--f2);
@@ -498,6 +498,27 @@ body.c-hover .cursor-dot {
 }
 
 .projekt-link:hover { opacity: 0.6; }
+.projekt-action { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+
+/* Privates Projekt: kein Link, nur Status */
+.projekt-privat {
+  font-family: var(--f2);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.projekt-arbeitsname {
+  font-family: var(--f2);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
 .projekt-link span { transition: transform 0.2s; display: inline-block; }
 .projekt-link:hover span { transform: translateX(4px); }
 
